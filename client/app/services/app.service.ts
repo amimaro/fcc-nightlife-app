@@ -6,38 +6,46 @@ import { Router } from '@angular/router';
 export class AppService {
 
   user: any;
+  isLoggedIn: boolean = false;
   message: string = "";
   apiUrl: string = 'http://localhost:8080/api/'
 
   constructor(
     private router: Router,
     private http: HttpClient
-  ) { }
+  ) {
+    this.getIsLoggedIn();
+  }
 
-  routeTo(route){
+  routeTo(route) {
     this.router.navigate(route);
   }
 
-  getUser () { return this.user; }
+  getUser() { return this.user; }
 
   getSession() {
     return this.http.get(this.apiUrl + 'user/auth/session');
-  }
-
-  loginFacebook() {
-    window.location.href = '/api/user/auth/facebook/login';
   }
 
   loginTwitter() {
     window.location.href = '/api/user/auth/twitter/login';
   }
 
-  loginGoogle() {
-    window.location.href = '/api/user/auth/google/login';
+  logoutTwitter() {
+    window.location.href = '/api/user/auth/logout';
   }
 
-  loginGithub() {
-    window.location.href = '/api/user/auth/github/login';
+  getIsLoggedIn() {
+    this.getSession()
+      .subscribe(
+      res => {
+        this.isLoggedIn = true;
+        console.log(this.isLoggedIn)
+      },
+      err => {
+        this.isLoggedIn = false;
+        console.log(this.isLoggedIn)
+      });
   }
 
 }

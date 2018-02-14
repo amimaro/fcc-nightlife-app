@@ -1,0 +1,12 @@
+.hero.is-purple {
+  background-color: rgb(91, 0, 82);
+  color: white !important;
+}
+
+.hero.is-purple *{
+  color: white !important;
+}
+
+a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link.is-active {
+    background-color: rgb(45, 0, 41) !important;
+}

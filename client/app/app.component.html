@@ -1,27 +1,21 @@
-<section class="hero is-primary">
+<section class="hero is-purple">
   <div class="hero-head">
     <nav class="navbar">
       <div class="container">
-        <div class="navbar-brand">
-          <a href="https://bulma.io" target="_blank">
-            <img src="assets/made-with-bulma.png" alt="Made with Bulma" width="256" height="48">
-          </a>
-          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
             <a class="navbar-item" [routerLink]="['/']">
               Home
             </a>
-            <a class="navbar-item" [routerLink]="['/profile']">
+            <a class="navbar-item" [routerLink]="['/profile']" *ngIf="appService.isLoggedIn">
               Profile
             </a>
-            <a class="navbar-item" [routerLink]="['/login']">
-              Login
+            <a class="navbar-item" (click)="logout()" *ngIf="appService.isLoggedIn">
+              Logout
+            </a>
+            <a class="navbar-item" (click)="login()" *ngIf="!appService.isLoggedIn">
+              <span class="icon"><i class="fa fa-twitter"></i></span>
+              <span>Sign in with Twitter</span>
             </a>
           </div>
         </div>
@@ -36,6 +30,9 @@
       <h2 class="subtitle">
         Source available at client/app/app.component.html to get started
       </h2>
+      <h2 class="subtitle">
+        by <a href="https://github.com/amimaro" target="_blank">Amimaro</a>
+      </h2>
     </div>
   </div>
 </section>
@@ -48,8 +45,8 @@
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        <strong>Bulma</strong>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        <strong>fcc-nightlife-app</strong>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
       </p>
     </div>
   </div>
