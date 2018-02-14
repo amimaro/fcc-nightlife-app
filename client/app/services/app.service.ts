@@ -53,12 +53,10 @@ export class AppService {
     this.http.post(this.apiUrl + 'yelp', { location: location })
       .subscribe(
       res => {
-        res = JSON.parse(res+"");
         console.log(res);
         this.locations = res;
       },
       err => {
-        err = JSON.parse(err+"")
         console.log(err);
         this.message = err;
       });
