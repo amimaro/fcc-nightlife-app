@@ -25,15 +25,19 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        fcc-nightlife-app
+        Plans tonight?
       </h1>
       <h2 class="subtitle">
-        Source available at client/app/app.component.html to get started
+        fcc-nightlife-app
       </h2>
       <h2 class="subtitle">
-        by <a href="https://github.com/amimaro" target="_blank">Amimaro</a>
+        <p>Source available at client/app/app.component.html to get started</p>
+        <p>by <a href="https://github.com/amimaro" target="_blank">Amimaro</a></p>
       </h2>
     </div>
+  </div>
+  <div class="hero-footer container" style="padding-bottom: 20px">
+    <input [(ngModel)]="searchInput" (input)="typing()" class="input is-large" type="text" placeholder="Where you at?" autofocus>
   </div>
 </section>
 

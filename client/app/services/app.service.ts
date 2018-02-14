@@ -7,6 +7,7 @@ export class AppService {
 
   user: any;
   isLoggedIn: boolean = false;
+  locations: any;
   message: string = "";
   apiUrl: string = 'http://localhost:8080/api/'
 
@@ -45,6 +46,21 @@ export class AppService {
       err => {
         this.isLoggedIn = false;
         console.log(this.isLoggedIn)
+      });
+  }
+
+  search(location) {
+    this.http.post(this.apiUrl + 'yelp', { location: location })
+      .subscribe(
+      res => {
+        res = JSON.parse(res+"");
+        console.log(res);
+        this.locations = res;
+      },
+      err => {
+        err = JSON.parse(err+"")
+        console.log(err);
+        this.message = err;
       });
   }
 

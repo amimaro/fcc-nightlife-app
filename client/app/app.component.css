@@ -3,7 +3,7 @@
   color: white !important;
 }
 
-.hero.is-purple *{
+.hero.is-purple p, a, h1, h2, h3 {
   color: white !important;
 }
 
