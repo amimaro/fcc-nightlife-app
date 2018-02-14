@@ -11,7 +11,7 @@ class YelpController extends Controller {
       location: req.body.location
     }).then(data => {
       console.log(data);
-      res.status(201).json(data)
+      res.status(201).json(data.jsonBody)
     }).catch(err => {
       console.log(err);
       res.status(404)
