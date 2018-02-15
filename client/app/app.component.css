@@ -1,9 +1,8 @@
 .hero.is-purple {
   background-color: rgb(91, 0, 82);
-  color: white !important;
 }
 
-.hero.is-purple p, a, h1, h2, h3 {
+.hero-body.is-purple p, h1, h2, h3 {
   color: white !important;
 }
 

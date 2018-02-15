@@ -16,6 +16,18 @@ export class AppService {
     private http: HttpClient
   ) {
     this.getIsLoggedIn();
+    if (this.isLocalEmpty()) {
+      this.message = 'Start by placing some search...';
+      this.locations = [];
+      localStorage.setItem("nightlife-local", JSON.stringify(this.locations));
+    } else {
+      this.clearMessage();
+      this.locations = JSON.parse(localStorage.getItem("nightlife-local"));
+    }
+  }
+
+  isLocalEmpty() {
+    return localStorage.getItem("nightlife-local") === 'undefined' || localStorage.getItem("nightlife-local") === null;
   }
 
   routeTo(route) {
@@ -49,16 +61,35 @@ export class AppService {
       });
   }
 
+  loadingMessage() {
+    this.message = 'Loading...';
+  }
+
+  clearMessage() {
+    this.message = '';
+  }
+
+  clearLocations() {
+    this.locations = [];
+  }
+
+  saveLocations() {
+    localStorage.setItem("nightlife-local", JSON.stringify(this.locations));
+  }
+
   search(location) {
+    this.loadingMessage();
     this.http.post(this.apiUrl + 'yelp', { location: location })
       .subscribe(
       res => {
         console.log(res);
         this.locations = res;
+        this.clearMessage();
+        this.saveLocations()
       },
       err => {
         console.log(err);
-        this.message = err;
+        this.message = 'Location not found :/';
       });
   }
 
