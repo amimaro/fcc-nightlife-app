@@ -8,7 +8,8 @@ class YelpController extends Controller {
   search(req, res, next) {
 
     client.search({
-      location: req.body.location
+      location: req.body.location,
+      categories: 'bars'
     }).then(data => {
       console.log(data);
       res.status(201).json(data.jsonBody)
