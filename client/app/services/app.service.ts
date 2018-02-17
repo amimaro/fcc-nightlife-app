@@ -10,7 +10,7 @@ export class AppService {
   locations: any;
   message: string = "";
   // apiUrl: string = 'http://localhost:8080/api/'
-  apiUrl: string = 'https://fcc-buildnightlife-app.herokuapp.com/'
+  apiUrl: string = 'https://fcc-buildnightlife-app.herokuapp.com/api/'
 
   constructor(
     private router: Router,
