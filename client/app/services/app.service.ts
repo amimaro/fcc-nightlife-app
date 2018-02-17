@@ -61,8 +61,9 @@ export class AppService {
       });
   }
 
-  loadingMessage() {
+  loading() {
     this.message = 'Loading...';
+    this.locations = [];
   }
 
   clearMessage() {
@@ -78,18 +79,57 @@ export class AppService {
   }
 
   search(location) {
-    this.loadingMessage();
+    this.loading();
     this.http.post(this.apiUrl + 'yelp', { location: location })
       .subscribe(
       res => {
+        this.clearMessage();
         console.log(res);
         this.locations = res;
-        this.clearMessage();
-        this.saveLocations()
+        this.visitors()
+          .subscribe(
+          res => {
+            console.log(res)
+            this.locations.map((location) => {
+              location.visitors = 0;
+              Object.values(res).map((visited) => {
+                if (location.id == visited.location)
+                  location.visitors++;
+              });
+              return location;
+            })
+            console.log(this.locations);
+            this.saveLocations()
+          },
+          err => {
+            console.log(err);
+            this.message = 'Location not found :/';
+          });
       },
       err => {
         console.log(err);
         this.message = 'Location not found :/';
+      });
+  }
+
+  visitors() {
+    return this.http.get(this.apiUrl + 'yelp/going');
+  }
+
+  going(id) {
+    console.log(this.locations)
+    this.http.get(this.apiUrl + 'yelp/going/' + id)
+      .subscribe(
+      res => {
+        console.log(res);
+        this.locations.map((location) => {
+          if (location.id == id)
+            location.visitors++;
+          return location;
+        });
+      },
+      err => {
+        console.log(err);
       });
   }
 

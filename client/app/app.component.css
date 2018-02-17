@@ -2,7 +2,7 @@
   background-color: rgb(91, 0, 82);
 }
 
-.hero-body.is-purple p, h1, h2, h3 {
+.hero-body.is-purple p, a, h1, h2, h3 {
   color: white !important;
 }
 

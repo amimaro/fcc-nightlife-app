@@ -41,4 +41,8 @@ export class HomeComponent implements OnInit {
     return rating;
   }
 
+  going(id){
+    this.appService.going(id);
+  }
+
 }

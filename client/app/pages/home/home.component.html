@@ -2,7 +2,7 @@
   <h1 class="title">{{appService.message}}</h1>
 </div>
 <br>
-<div class="box" *ngFor="let location of appService.locations.businesses">
+<div class="box" *ngFor="let location of appService.locations">
   <article class="media">
     <div class="media-left">
       <figure class="image is-64x64">
@@ -19,7 +19,8 @@
       </div>
     </div>
     <div class="media-right">
-      <a class="button is-large">0 Going</a>
+      <p *ngIf="!appService.isLoggedIn">{{ location.visitors }} Visitors tonight</p>
+      <a class="button is-large" *ngIf="appService.isLoggedIn" (click)="going(location.id)">{{ location.visitors }} Going</a>
       <a href="{{location.url}}" target="_blank">
         <figure class="image is-64x64" style="margin-top: 20px; margin-left: 10px">
           <img src="assets/yelp.png" alt="Image">

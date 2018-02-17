@@ -3,8 +3,12 @@ const Schema = mongoose.Schema;
 
 
 const yelpSchema = new Schema({
-  title: { type: String, required: true },
-  body: { type: String }
+  _creator: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  location: String,
+  created_at: Date,
 });
 
 
