@@ -58,7 +58,8 @@
     "rxjs": "^5.5.6",
     "yelp-api": "^1.0.3",
     "yelp-fusion": "^2.0.3",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "typescript": "~2.5.3"
   },
   "devDependencies": {
     "@angular/cli": "1.6.5",
