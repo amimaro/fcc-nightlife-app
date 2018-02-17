@@ -127,6 +127,7 @@ export class AppService {
             location.visitors++;
           return location;
         });
+        this.saveLocations()
       },
       err => {
         console.log(err);

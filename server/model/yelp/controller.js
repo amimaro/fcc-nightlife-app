@@ -36,10 +36,7 @@ class YelpController extends Controller {
           if (results.n < 1) {
             return res.sendStatus(404);
           }
-          if(result.upserted.length > 0){
-            return res.sendStatus(204);
-          }
-          if (results.nModified < 1) {
+          if(!results.hasOwnProperty('upserted')){
             return res.sendStatus(304);
           }
           res.sendStatus(204);
