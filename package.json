@@ -25,8 +25,8 @@
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
-    "@angular/cli": "1.6.5",
-    "@angular/compiler-cli": "^5.2.0",
+    "@angular/cli": "^1.6.0",
+    "@angular/compiler-cli": "^5.0.0",
     "@angular/core": "^5.2.0",
     "@angular/forms": "^5.2.0",
     "@angular/http": "^5.2.0",
@@ -56,13 +56,13 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
     "rxjs": "^5.5.6",
+    "typescript": "~2.4.2",
     "yelp-api": "^1.0.3",
     "yelp-fusion": "^2.0.3",
     "zone.js": "^0.8.19",
-    "typescript": "~2.5.3"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.5",
+    "@angular/cli": "^1.6.5",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
