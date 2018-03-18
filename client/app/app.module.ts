@@ -13,7 +13,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
   },
   {
