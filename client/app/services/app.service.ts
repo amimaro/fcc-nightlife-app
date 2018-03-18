@@ -9,8 +9,8 @@ export class AppService {
   isLoggedIn: boolean = false;
   locations: any;
   message: string = "";
-  // apiUrl: string = 'http://localhost:8080/api/'
-  apiUrl: string = 'https://fcc-buildnightlife-app.herokuapp.com/api/'
+  apiUrl: string = 'http://localhost:8080/api/';
+  // apiUrl: string = 'https://fcc-buildnightlife-app.herokuapp.com/api/';
 
   constructor(
     private router: Router,

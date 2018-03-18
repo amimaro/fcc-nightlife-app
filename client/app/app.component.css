@@ -9,3 +9,11 @@
 a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link.is-active {
     background-color: rgb(45, 0, 41) !important;
 }
+
+.navbar-menu {
+    background-color: rgb(91, 0, 82);
+}
+
+.navbar-burger span {
+  color: white !important;
+}

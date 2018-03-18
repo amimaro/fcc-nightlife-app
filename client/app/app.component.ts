@@ -12,8 +12,14 @@ export class AppComponent {
   timer: any;
   title = 'app';
   searchInput: string = "";
+  isNavBar: boolean = false;
 
   constructor(public appService: AppService) { }
+
+
+  toggleNavBar() {
+    return this.isNavBar;
+  }
 
   login() {
     this.appService.loginTwitter();
