@@ -1,6 +1,6 @@
-## FreeCodeCamp - Backend Challenges
-## Dynamic Web Application Projects: [Build a Nightlife Coordination App](https://www.freecodecamp.org/challenges/build-a-nightlife-coordination-app)
 ## fcc-nightlife-app
+## freeCodeCamp - Backend Challenges
+## Dynamic Web Application Projects: [Build a Nightlife Coordination App](https://www.freecodecamp.org/challenges/build-a-nightlife-coordination-app)
 
 ### Getting started
 
